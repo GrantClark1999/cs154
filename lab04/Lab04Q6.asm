@@ -11,11 +11,6 @@ rick:
 main:
     addi $a1, $zero, 0x2        # $a1 = b
     addi $s0, $zero, -0x4       # $s0 = i (index) [-4]
-
-    li $v0, 1
-    move $a0, $s0
-    syscall
-
     addi $s1, $zero, 0x14       # $s1 = 20 (const, loop stop condition)
     la $s2, array               # $s2 = a
 
