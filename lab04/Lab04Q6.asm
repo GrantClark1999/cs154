@@ -10,7 +10,7 @@ rick:
 
 main:
     addi $a1, $zero, 0x2        # $a1 = b
-    addi $s0, $zero, 0xFC       # $s0 = i (index) [-4]
+    addi $s0, $zero, -0x4       # $s0 = i (index) [-4]
 
     li $v0, 1
     move $a0, $s0
