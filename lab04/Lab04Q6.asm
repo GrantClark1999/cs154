@@ -9,13 +9,13 @@ rick:
     jr $ra
 
 main:
-    addi $a1, $zero, 2          # $a1 = b
-    addi $s0, $zero, -4         # $s0 = i (index)
-    addi $s1, $zero, 20         # $s1 = 20 (const, loop stop condition)
+    addi $a1, $zero, 0x2        # $a1 = b
+    addi $s0, $zero, 0xFFFC     # $s0 = i (index) [-4]
+    addi $s1, $zero, 0x14       # $s1 = 20 (const, loop stop condition)
     la $s2, array               # $s2 = a
 
 loop:
-    addi $s0, $s0, 4
+    addi $s0, $s0, 0x4
     beq $s0, $s1, exit
     add $v0, $zero, $zero       # $v0 = 0
 
@@ -28,14 +28,14 @@ loop:
 
 print:
     add $a0, $v0, $zero         # print v
-    addi $v0, $zero, 1
+    addi $v0, $zero, 0x1
     syscall
     la $a0, units               # print string
-    addi $v0, $zero, 4
+    addi $v0, $zero, 0x4
     syscall
 
     j loop
 
 exit:
-    addi $v0, $zero, 10         # exit syscall
+    addi $v0, $zero, 0xA         # exit syscall
     syscall
