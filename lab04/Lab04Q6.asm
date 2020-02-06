@@ -4,13 +4,13 @@ units: .asciiz " units.\n"
 
 .text
 rick:
-    sll $v0, $a0, 1
+    sll $v0, $a0, 0x1
     sub $v0, $v0, $a1
     jr $ra
 
 main:
     addi $a1, $zero, 0x2        # $a1 = b
-    addi $s0, $zero, 0xFFFC     # $s0 = i (index) [-4]
+    addi $s0, $zero, 0xFC     # $s0 = i (index) [-4]
     addi $s1, $zero, 0x14       # $s1 = 20 (const, loop stop condition)
     la $s2, array               # $s2 = a
 
