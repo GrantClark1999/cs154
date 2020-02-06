@@ -29,7 +29,7 @@ morty:
     jr $ra
 
 main:
-    addi $a0, $zero, -0x5
+    addi $a0, $zero, 0x5
     jal morty
     sll $v0, $v0, 0x2
 
