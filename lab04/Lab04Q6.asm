@@ -16,11 +16,11 @@ main:
 
 loop:
     addi $s0, $s0, 4
-    beq $s0, $s1
+    beq $s0, $s1, exit
     add $v0, $zero, $zero       # $v0 = 0
 
-    addi $t0, $s2, $s0          # $t0 = &a[i]
-    add $a0, 0($t0), $zero      # $a0 = a[i]
+    add $t0, $s2, $s0           # $t0 = &a[i]
+    lw $a0, 0($t0)              # $a0 = a[i]
     slt $t1, $a1, $a0           # (b < a[i]) ? 1 : 0
     beq $t1, $zero, print       # branch when a[i] <= b
 
