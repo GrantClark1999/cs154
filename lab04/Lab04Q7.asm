@@ -11,7 +11,7 @@ morty:
     sw $a0, 4($sp)
     sw $ra, 0($sp)
 
-    addi $s0, $zero, $a0
+    add $s0, $zero, $a0
     sll $a0, $a0, 0x1
     addi $a0, $a0, -0x6
 
